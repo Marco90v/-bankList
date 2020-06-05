@@ -1,0 +1,7 @@
+{
+  "name": "huella",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
