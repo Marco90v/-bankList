@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/lista" ></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{encabezado}}</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="addCuenta()">
+        <ion-icon slot="end" name="wallet" color="primary"></ion-icon>
+      </ion-button>
+      <ion-button (click)="addTarjeta()">
+        <ion-icon slot="end" name="card" color="primary"></ion-icon>
+      </ion-button>
+      <ion-button (click)="guardar()" color="success">
+        <ion-icon slot="end" name="save"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item-group>
+
+    <ion-item-divider class="ion-text-center divisor">
+      <ion-label class="ion-text-center">Datos Bancarios</ion-label>
+    </ion-item-divider>
+
+    <ion-item >
+      <ion-label position="floating">Alias <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input [(ngModel)]="datosBanco.alias" ></ion-input>
+    </ion-item>
+    <ion-item >
+      <ion-label position="floating">Banco</ion-label>
+      <ion-input [(ngModel)]="datosBanco.banco"></ion-input>
+    </ion-item>
+    <ion-item > 
+      <ion-label position="floating">Usuario Web</ion-label>
+      <ion-input [(ngModel)]="datosBanco.usuarioWeb"></ion-input>
+    </ion-item>
+    <ion-item >
+      <ion-label position="floating">Clave Web</ion-label>
+      <ion-input [(ngModel)]="datosBanco.claveWeb"></ion-input>
+    </ion-item>
+  </ion-item-group>
+
+  <ion-item-group *ngFor="let cuenta of cuentas; let i = index">
+    <ion-item-divider class="divisor">
+      <ion-label>Cuenta {{i+1}}</ion-label>
+      <ion-icon class="iconoTrash" color="danger" slot="end" name="trash" (click)="borrarCuenta(i)" ></ion-icon>
+    </ion-item-divider>
+  
+    <ion-item>
+      <ion-label position="floating">Tipo de Cuenta</ion-label>
+      <ion-input [(ngModel)]="cuenta.tipoCuenta"></ion-input>
+    </ion-item>
+    <ion-item >
+      <ion-label position="floating">Numero de Cuenta Local</ion-label>
+      <ion-input [(ngModel)]="cuenta.numCuenta"></ion-input>
+    </ion-item>
+    <ion-item >
+      <ion-label position="floating">Numero de Cuenta Interbancario</ion-label>
+      <ion-input [(ngModel)]="cuenta.numCuentaInter"></ion-input>
+    </ion-item>
+    
+  </ion-item-group>
+
+
+  <ion-item-group *ngFor="let tarjeta of tarjetas; let i = index">
+    <ion-item-divider class="divisor">
+      <ion-label>Tarjeta {{i+1}}</ion-label>
+      <ion-icon class="iconoTrash" color="danger" slot="end" name="trash" (click)="borrarTarjeta(i)" ></ion-icon>
+    </ion-item-divider>
+
+    <ion-item>
+      <ion-label position="floating">Numero de Tarjeta</ion-label>
+      <ion-input [(ngModel)]="tarjeta.nomTarjeta" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Tipo de Tarjeta</ion-label>
+      <ion-input [(ngModel)]="tarjeta.tipoTarjeta"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">CVC</ion-label>
+      <ion-input [(ngModel)]="tarjeta.CVC"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Clave tarjeta</ion-label>
+      <ion-input [(ngModel)]="tarjeta.claveTarjeta"></ion-input>
+    </ion-item>
+  </ion-item-group>
+
+</ion-content>

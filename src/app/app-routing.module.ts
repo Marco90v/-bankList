@@ -11,11 +11,23 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'lista',
+    loadChildren: () => import('./pages/lista/lista.module').then( m => m.ListaPageModule)
+  },
+  {
+    path: 'nuevo',
+    loadChildren: () => import('./pages/nuevo/nuevo.module').then( m => m.NuevoPageModule)
+  },
+  {
+    path: 'edit/:id',
+    loadChildren: () => import('./pages/edit/edit.module').then( m => m.EditPageModule)
+  }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules, onSameUrlNavigation: 'reload' })
   ],
   exports: [RouterModule]
 })
