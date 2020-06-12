@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
 import { Router } from '@angular/router';
-// import { TouchID } from '@ionic-native/touch-id/ngx';
 
 @Component({
   selector: 'app-home',
@@ -9,22 +8,22 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
+  actionHuella: string;
 
-  // private huella: FingerprintAIO
-  // private huella: TouchID
   constructor(private huella: FingerprintAIO, private router: Router) {}
 
   ngOnInit(){
+    this.activarHuella();
+  }
+
+  activarHuella(){
     this.huella.show({
       title: 'Verificacion de Usuario',
-      description: 'Para ingresar ingrese huella dactilar',
-      disableBackup: true
+      description: 'Ingrese huella dactilar',
+      disableBackup: false
     })
-    .then((result: any) => this.router.navigate(['/lista']))
-    .catch((error: any) => console.log(error));
-
-
-    // this.huella.verifyFingerprint('Escaneo de huella').then(e => console.log(e)).catch(e => console.log(e));
+    .then((result: any) => {this.actionHuella = 'huellaSuccess'; this.router.navigate(['/lista']); })
+    .catch((error: any) => this.actionHuella = 'huellaError');
   }
 
 }

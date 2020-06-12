@@ -1,13 +1,13 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>Lista de bancos</ion-title>
+    <ion-title>Lista de Bancos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button routerLink="/nuevo">
+    <ion-fab-button [routerLink]="['/nuevo']" routerLinkActive="router-link-active" >
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
@@ -22,8 +22,7 @@
             <ion-item-option color="danger" (click)="borrar(i)"><ion-icon  slot="start" name="trash"></ion-icon></ion-item-option>
           </ion-item-options>
 
-
-          <ion-item routerLink="/edit/{{i}}" detail >
+          <ion-item  [routerLink]="['/edit', i]" detail>
             <ion-reorder slot="start"></ion-reorder>
             <ion-label>{{item}}</ion-label>
           </ion-item>

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">huella</string>
-    <string name="title_activity_main">huella</string>
-    <string name="package_name">io.ionic.starter</string>
-    <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="app_name">Bank List</string>
+    <string name="title_activity_main">Bank List</string>
+    <string name="package_name">com.marcoajvf.bankList</string>
+    <string name="custom_url_scheme">com.marcoajvf.bankList</string>
 </resources>

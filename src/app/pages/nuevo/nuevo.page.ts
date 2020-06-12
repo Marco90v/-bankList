@@ -1,6 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ServicioService } from 'src/app/services/servicio.service';
-import { Location } from '@angular/common';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
@@ -9,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './nuevo.page.html',
   styleUrls: ['./nuevo.page.scss'],
 })
-export class NuevoPage implements OnInit, OnDestroy{
+export class NuevoPage implements OnInit{
 
   datosBanco = {alias: '', banco: '', usuarioWeb: '', claveWeb: ''};
   cuentas: any[] = Array(0);
@@ -23,17 +22,13 @@ export class NuevoPage implements OnInit, OnDestroy{
 
   ngOnInit() {}
 
-  ionViewWillLeave(){}
-
-  ngOnDestroy(){}
-
   async guardar(){
     if (this.datosBanco.alias === 'undefined' || this.datosBanco.alias === ''){
       const alert = await this.alertController.create({
         cssClass: 'my-custom-class',
         header: 'Guardar',
         subHeader: 'Nuevos datos Bancarios',
-        message: 'El campo Alias es obligatorio',
+        message: 'El campo "Alias" es obligatorio',
         buttons: ['OK']
       });
       await alert.present();

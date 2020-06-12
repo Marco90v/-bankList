@@ -10,11 +10,7 @@ export class ServicioService {
   constructor() {}
 
   setStorage(datos?: any){
-    // tslint:disable-next-line: no-unused-expression
-    // this.datos === null ? this.datos = [] : false;
     if (this.datos === null){this.datos = []; }
-    // tslint:disable-next-line: no-unused-expression
-    // datos ? this.datos.push(datos) : false ;
     if (datos){this.datos.push(datos); }
     localStorage.setItem('usuario', JSON.stringify(this.datos));
   }

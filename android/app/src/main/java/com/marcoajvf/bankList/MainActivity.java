@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package com.marcoajvf.bankList;
 
 import android.os.Bundle;
 

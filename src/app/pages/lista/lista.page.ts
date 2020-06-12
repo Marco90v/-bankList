@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioService } from 'src/app/services/servicio.service';
 import { Platform } from '@ionic/angular';
-import { Router, NavigationEnd, RouterEvent } from '@angular/router';
-import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista',
@@ -11,17 +10,10 @@ import { map } from 'rxjs/operators';
 })
 export class ListaPage implements OnInit {
 
-  navigationSubscription;
   lista: any[] = [];
   datos: any[] = [];
 
   constructor(private dataServices: ServicioService, private plataforma: Platform, private ruta: Router) {
-    this.navigationSubscription = ruta.events.pipe(
-      // map((e: RouterEvent) => e instanceof NavigationEnd ? e.url === '/lista' ? console.log('ok') : false : false)
-      map((e: RouterEvent) => {if (e instanceof NavigationEnd) {if (e.url === '/lista') { this.cargar(); } }})
-    ).subscribe();
-
-
     this.plataforma.backButton.subscribeWithPriority(666666, () => {
       if (ruta.url === '/lista'){
         navigator['app'].exitApp();
@@ -31,9 +23,8 @@ export class ListaPage implements OnInit {
     });
   }
 
-  // tslint:disable-next-line: use-lifecycle-interface
-  ngOnDestroy(){
-    if (this.navigationSubscription){this.navigationSubscription.unsubscribe(); }
+  ionViewWillEnter(){
+    this.cargar();
   }
 
   ngOnInit() {}

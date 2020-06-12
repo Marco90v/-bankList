@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "huella",
+  "appId": "com.marcoajvf.bankList",
+  "appName": "Bank List",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",

@@ -10,7 +10,6 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
-// import { TouchID } from '@ionic-native/touch-id/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +17,6 @@ import { FingerprintAIO } from '@ionic-native/fingerprint-aio/ngx';
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
     FingerprintAIO,
-    // TouchID,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

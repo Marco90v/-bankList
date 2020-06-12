@@ -7,13 +7,13 @@
 
     <ion-buttons slot="end">
       <ion-button (click)="addCuenta()">
-        <ion-icon slot="end" name="wallet" color="primary"></ion-icon>
+        <ion-icon name="wallet" color="primary"></ion-icon>
       </ion-button>
       <ion-button (click)="addTarjeta()">
-        <ion-icon slot="end" name="card" color="primary"></ion-icon>
+        <ion-icon name="card" color="primary"></ion-icon>
       </ion-button>
       <ion-button (click)="guardar()" color="success">
-        <ion-icon slot="end" name="save"></ion-icon>
+        <ion-icon name="save"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -40,7 +40,7 @@
     </ion-item>
     <ion-item >
       <ion-label position="floating">Clave Web</ion-label>
-      <ion-input [(ngModel)]="datosBanco.claveWeb"></ion-input>
+      <ion-input [(ngModel)]="datosBanco.claveWeb" type="password"></ion-input>
     </ion-item>
   </ion-item-group>
 
@@ -56,11 +56,11 @@
     </ion-item>
     <ion-item >
       <ion-label position="floating">Numero de Cuenta Local</ion-label>
-      <ion-input [(ngModel)]="cuenta.numCuenta"></ion-input>
+      <ion-input [(ngModel)]="cuenta.numCuenta" type="number"></ion-input>
     </ion-item>
     <ion-item >
       <ion-label position="floating">Numero de Cuenta Interbancario</ion-label>
-      <ion-input [(ngModel)]="cuenta.numCuentaInter"></ion-input>
+      <ion-input [(ngModel)]="cuenta.numCuentaInter" type="number"></ion-input>
     </ion-item>
     
   </ion-item-group>
@@ -74,7 +74,7 @@
 
     <ion-item>
       <ion-label position="floating">Numero de Tarjeta</ion-label>
-      <ion-input [(ngModel)]="tarjeta.nomTarjeta" ></ion-input>
+      <ion-input [(ngModel)]="tarjeta.nomTarjeta" type="number"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Tipo de Tarjeta</ion-label>
@@ -82,11 +82,15 @@
     </ion-item>
     <ion-item>
       <ion-label position="floating">CVC</ion-label>
-      <ion-input [(ngModel)]="tarjeta.CVC"></ion-input>
+      <ion-input [(ngModel)]="tarjeta.CVC" type="password"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Clave tarjeta</ion-label>
-      <ion-input [(ngModel)]="tarjeta.claveTarjeta"></ion-input>
+      <ion-input [(ngModel)]="tarjeta.claveTarjeta" type="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Fecha de Vencimiento</ion-label>
+      <ion-datetime displayFormat="MMMM YYYY" min="2010-01" max="2100-12" [(ngModel)]="tarjeta.fechaVenc" ></ion-datetime>
     </ion-item>
   </ion-item-group>
 
