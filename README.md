@@ -29,4 +29,19 @@ Fecha de Vencimiento: fecha de vencimiento de la tarjeta.} <br>
 
 Se pueden agregar las cantidades que se deseen de cuentas y tarjetas, editar, mover el orden de la lista y eliminar
 
-Autor: Marco Velasquez Figarella
+### Autor: 
+Marco Velasquez Figarella
+
+
+### Screenshot
+
+#### Vista Inicio (Desbloqueo por huella  o contraseña o patron)
+![Screenshot](https://raw.githubusercontent.com/Marco90v/books/master/Caps/listBank-cap-1.png)
+
+#### Vista de los registro (se listan los registros agregados, se desliza a la derecha para eliminar y se puede reorganizar el orden)
+![Screenshot](https://raw.githubusercontent.com/Marco90v/books/master/Caps/listBank-cap-2.png)
+
+#### Vista de Nuevo (se pueden ver los datos a agregar, en la parte superior derecha se agregan mas cuentas, tarjetas y se guardan los datos)
+##### la Vista Editar es totalmente igual (para editar solo tocar sobre el registro en la vista de Listado)
+![Screenshot](https://raw.githubusercontent.com/Marco90v/books/master/Caps/listBank-cap-3.png)
+
