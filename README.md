@@ -30,7 +30,7 @@ Fecha de Vencimiento: fecha de vencimiento de la tarjeta.} <br>
 Se pueden agregar las cantidades que se deseen de cuentas y tarjetas, editar, mover el orden de la lista y eliminar
 
 ### Autor: 
-Marco Velasquez Figarella
+Marco
 
 
 ### Screenshot
